@@ -8,11 +8,13 @@ class ProductCard extends StatelessWidget {
     required this.title,
     required this.price,
     required this.onPress,
+    required this.bgColor,
   }) : super(key: key);
 
   final String image, title;
   final int price;
   final VoidCallback onPress;
+  final Color bgColor;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,7 @@ class ProductCard extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(
-                color: const Color(0xffefeff2),
+                color: bgColor,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Image.asset(
