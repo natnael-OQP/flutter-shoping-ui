@@ -27,10 +27,12 @@ class ProductPreview1 extends StatelessWidget {
                 image: demo_product[index].image,
                 title: demo_product[index].title,
                 price: demo_product[index].price,
+                bgColor: demo_product[index].bgColor,
                 onPress: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (BuildContext context) => const DetailScreen(),
+                      builder: (BuildContext context) =>
+                          DetailScreen(product: demo_product[index]),
                     ),
                   );
                 },
@@ -65,7 +67,15 @@ class ProductPreview2 extends StatelessWidget {
                 image: demo_product[index].image,
                 title: demo_product[index].title,
                 price: demo_product[index].price,
-                onPress: () {},
+                bgColor: demo_product[index].bgColor,
+                onPress: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          DetailScreen(product: demo_product[index]),
+                    ),
+                  );
+                },
               ),
             ),
           ),
